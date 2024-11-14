@@ -32,7 +32,7 @@ setup(
         'Intended Audience :: Developers',
         ('License :: OSI Approved :: '
          'GNU Lesser General Public License v3 or later (LGPLv3+)'),
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
     packages=find_packages(include=[
         'njsscan', 'njsscan.*',
@@ -48,10 +48,11 @@ setup(
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
     install_requires=[
-        'colorama>=0.4.3',
-        'libsast>=1.4.5',
+        'colorama>=0.4.5',
+        'libsast>=3.1.4',
+        'semgrep==1.86.0',
         'sarif-om>=1.0.4',
         'jschema-to-python>=1.2.3',
-        'tabulate>=0.8.8',
+        'tabulate>=0.8.10',
     ],
 )

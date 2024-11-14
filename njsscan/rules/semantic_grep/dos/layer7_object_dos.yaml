@@ -23,6 +23,5 @@ rules:
       - javascript
     severity: ERROR
     metadata:
-      owasp: 'A6: Security Misconfiguration'
-      cwe: >-
-        CWE-400: Uncontrolled Resource Consumption
+      owasp-web: a6
+      cwe: cwe-400

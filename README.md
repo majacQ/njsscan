@@ -6,10 +6,7 @@ Made with ![Love](https://cloud.githubusercontent.com/assets/4301109/16754758/82
 [![PyPI version](https://badge.fury.io/py/njsscan.svg)](https://badge.fury.io/py/njsscan)
 [![platform](https://img.shields.io/badge/platform-osx%2Flinux-green.svg)](https://github.com/ajinabraham/njsscan)
 [![License](https://img.shields.io/:license-lgpl3+-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0.en.html)
-[![python](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
-
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/ajinabraham/njsscan.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ajinabraham/njsscan/context:python)
-[![Requirements Status](https://requires.io/github/ajinabraham/njsscan/requirements.svg?branch=master)](https://requires.io/github/ajinabraham/njsscan/requirements/?branch=master)
+[![python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![Build](https://github.com/ajinabraham/njsscan/workflows/Build/badge.svg)](https://github.com/ajinabraham/njsscan/actions?query=workflow%3ABuild)
 
 ### Support njsscan
@@ -24,7 +21,7 @@ Made with ![Love](https://cloud.githubusercontent.com/assets/4301109/16754758/82
 
 `pip install njsscan`
 
-Requires Python 3.6+ and supports only Mac and Linux
+Requires Python 3.7+ and supports only Mac and Linux
 
 ## Command Line Options
 
@@ -188,7 +185,10 @@ jobs:
     name: njsscan check
     steps:
     - name: Checkout the code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4.2.2
+    - uses: actions/setup-python@v5.3.0
+      with:
+        python-version: '3.12'
     - name: nodejsscan scan
       id: njsscan
       uses: ajinabraham/njsscan-action@master
@@ -214,14 +214,17 @@ jobs:
     name: njsscan code scanning
     steps:
     - name: Checkout the code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4.2.2
+    - uses: actions/setup-python@v5.3.0
+      with:
+        python-version: '3.12'
     - name: nodejsscan scan
       id: njsscan
       uses: ajinabraham/njsscan-action@master
       with:
         args: '. --sarif --output results.sarif || true'
     - name: Upload njsscan report
-      uses: github/codeql-action/upload-sarif@v1
+      uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: results.sarif
 ```

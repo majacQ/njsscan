@@ -1,7 +1,7 @@
 # -*- coding: utf_8 -*-
 """Sonarqube output format."""
 
-from njsscan.formatters.json import json_output
+from njsscan.formatters.json_out import json_output
 
 
 def get_sonarqube_issue(njsscan_issue):
@@ -21,7 +21,7 @@ def get_sonarqube_issue(njsscan_issue):
                 'startLine': file['match_lines'][0],
                 'endLine': file['match_lines'][1],
                 'startColumn': file['match_position'][0],
-                'endColumn': file['match_position'][1],
+                'endColumn': file['match_position'][1] - 1,
             }
             location = {
                 'message': issue_data['description'],

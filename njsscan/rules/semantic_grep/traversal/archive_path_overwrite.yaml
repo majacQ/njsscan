@@ -37,10 +37,8 @@ rules:
       - javascript
     severity: ERROR
     metadata:
-      owasp: 'A5: Broken Access Control'
-      cwe: >-
-        CWE-22: Improper Limitation of a Pathname to a Restricted Directory
-        ('Path Traversal')
+      owasp-web: a5
+      cwe: cwe-22
   - id: zip_path_overwrite2
     patterns:
       - pattern-either:
@@ -77,10 +75,8 @@ rules:
       - javascript
     severity: ERROR
     metadata:
-      owasp: 'A5: Broken Access Control'
-      cwe: >-
-        CWE-22: Improper Limitation of a Pathname to a Restricted Directory
-        ('Path Traversal')
+      owasp-web: a5
+      cwe: cwe-22
   - id: admzip_path_overwrite
     patterns:
       - pattern-inside: |
@@ -112,10 +108,8 @@ rules:
       - javascript
     severity: ERROR
     metadata:
-      owasp: 'A5: Broken Access Control'
-      cwe: >-
-        CWE-22: Improper Limitation of a Pathname to a Restricted Directory
-        ('Path Traversal')
+      owasp-web: a5
+      cwe: cwe-22
   - id: tar_path_overwrite
     patterns:
       - pattern-inside: |
@@ -152,7 +146,5 @@ rules:
       - javascript
     severity: ERROR
     metadata:
-      owasp: 'A5: Broken Access Control'
-      cwe: >-
-        CWE-22: Improper Limitation of a Pathname to a Restricted Directory
-        ('Path Traversal')
+      owasp-web: a5
+      cwe: cwe-22

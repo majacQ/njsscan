@@ -5,13 +5,16 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  SEMGREP_R2C_INTERNAL_EXPLICIT_SEMGREPIGNORE: ./tests/assets/.semgrepignore
+
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.8, 3.9, '3.10']
 
     steps:
     - uses: actions/checkout@v2

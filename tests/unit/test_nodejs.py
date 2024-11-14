@@ -5,7 +5,7 @@ from .setup_test import (
 )
 
 from njsscan.formatters import (
-    json,
+    json_out,
     sarif,
     sonarqube,
 )
@@ -47,7 +47,7 @@ TRIGGERED = {
     'node_deserialize': 1,
     'serializetojs_deserialize': 2,
     'yaml_deserialize': 3,
-    'hardcoded_jwt_secret': 8,
+    'hardcoded_jwt_secret': 19,
     'node_secret': 11,
     'node_password': 9,
     'node_username': 1,
@@ -91,7 +91,7 @@ TRIGGERED = {
     'grpc_insecure_connection': 3,
     'jwt_express_hardcoded': 5,
     'jwt_exposed_credentials': 14,
-    'jwt_exposed_data': 2,
+    'jwt_exposed_data': 3,
     'jwt_not_revoked': 5,
     'buffer_noassert': 1,
     'xss_disable_mustache_escape': 1,
@@ -161,8 +161,8 @@ def nodejs_rule_trigger_count(res):
 
 
 def json_output(res):
-    json_out = json.json_output(None, res, '0.0.0')
-    assert json_out is not None
+    jout = json_out.json_output(None, res, '0.0.0')
+    assert jout is not None
 
 
 def sonar_output(res):

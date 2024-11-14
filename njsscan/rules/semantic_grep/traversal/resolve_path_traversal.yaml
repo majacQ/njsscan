@@ -37,8 +37,6 @@ rules:
     languages:
       - javascript
     metadata:
-      owasp: 'A5: Broken Access Control'
-      cwe: >-
-        CWE-22: Improper Limitation of a Pathname to a Restricted Directory
-        (Path Traversal)
+      owasp-web: a5
+      cwe: cwe-22
     severity: WARNING
